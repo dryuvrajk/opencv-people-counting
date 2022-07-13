@@ -228,7 +228,7 @@ Instead of declaring our model above, we can declare it in our main function.
 
 # Run the Code
 
-## To run the human detection and people counting deep learning code, please run below-mentioned commands as per requirements in Ananconda CMD line interpreter:
+### To run the human detection and people counting deep learning code, please run below-mentioned commands as per requirements in Ananconda CMD line interpreter:
 
 ### 1. To give video file as input:
 
