@@ -12,7 +12,9 @@ Argparse: Used to give input in command line.
 To install the required library, run the following code in your terminal.
 
 pip install opencv-python
+
 pip install imutils
+
 pip install numpy
 
 
