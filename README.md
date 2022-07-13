@@ -1,5 +1,7 @@
 # Human Detection and People Counting with Computer Vision
 
+### Airports usecase
+
 Prerequisites
 
 The project in Python requires you to have basic knowledge of python programming and the OpenCV library. The below mentioned libraries are required for you to be able to successfully run the program:
