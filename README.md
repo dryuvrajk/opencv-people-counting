@@ -1,4 +1,4 @@
-# People Counting with Computer Vision
+# Human Detection and People Counting with Computer Vision
 
 Prerequisites
 
@@ -21,14 +21,14 @@ pip install numpy
 HOG is a feature descriptor used in computer vision and image processing for the purpose of object detection. This is one of the most popular techniques for object detection, to our fortune, OpenCV has already been implemented in an efficient way to combine the HOG Descriptor algorithm with Support Vector Machine or SVM.
 Steps To Build Human Detection Project
 
-###1. Import the libraries:
+### 1. Import the libraries:
 
 import cv2
 import imutils
 import numpy as np
 import argparse
 
-###2. Create a model which will detect Humans:
+### 2. Create a model which will detect Humans:
 
 As discussed earlier, We will use HOGDescriptor with SVM already implemented in OpenCV.  Below code will do this work:
 
@@ -37,7 +37,7 @@ HOGCV.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 
 cv2.HOGDescriptor_getDefaultPeopleDetector() calls the pre-trained model for Human detection of OpenCV and then we will feed our support vector machine with it.
 
-###3. Detect() method:
+### 3. Detect() method:
 
 Here, the actual magic will happen.
 
@@ -69,7 +69,7 @@ Everything will be done by detectMultiScale(). It returns 2-tuple.
 
 Now, We have our detect method. Let’s Create a Detector.
 
-###4. HumanDetector() method
+### 4. HumanDetector() method
 
 There are two ways of getting Video.
 
@@ -98,7 +98,7 @@ def humanDetector(args):
         print('[INFO] Opening Image from path.')
         detectByPathImage(image_path, args['output'])
 
-###5. DetectByCamera() method
+### 5. DetectByCamera() method
 
 def detectByCamera(writer):   
     video = cv2.VideoCapture(0)
@@ -122,7 +122,7 @@ cv2.VideoCapture(0) passing 0 in this function means we want to record from a we
 
 Now, For each Frame, we will call detect() method. Then we write the frame in our output file.
 
-###6. DetectByPathVideo() method
+### 6. DetectByPathVideo() method
 
 This method is very similar to the previous method except we will give a path to the Video. First, we check if the video on the provided path is found or not.
 
@@ -176,7 +176,7 @@ def detectByCamera(writer):
 
 The implementation is similar to the previous function except for each frame we will check that it successfully reads the frame or not. At the end when the frame is not read we will end the loop.
 
-###7. DetectByPathimage() method
+### 7. DetectByPathimage() method
 
 This method is used if a person needs to be detected from an image.
 
@@ -193,7 +193,7 @@ def detectByPathImage(path, output_path):
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
-###8. Argparse() method
+### 8. Argparse() method
 
 The function argparse() simply parses and returns as a dictionary the arguments passed through your terminal to our script. There will be Three arguments within the Parser:
 
@@ -211,7 +211,7 @@ def argsParser():
 
     return args
 
-###9. Main function
+### 9. Main function
 
 We have reached the end of our project.
 
@@ -223,23 +223,24 @@ if __name__ == "__main__":
     humanDetector(args)
 
 Instead of declaring our model above, we can declare it in our main function.
-Run the Human Detection Project
 
-To run the human detection deep learning project, please run below-mentioned commands as per requirements in Ananconda CMD line interpreter:
+# Run the Code
 
-###1. To give video file as input:
+## To run the human detection and people counting deep learning code, please run below-mentioned commands as per requirements in Ananconda CMD line interpreter:
+
+### 1. To give video file as input:
 
 python main.py -v ‘Path_to_video’
 
-###2. To give image file as input:
+### 2. To give image file as input:
 
 python main.py -i ‘Path_to-image’
 
-###3. To use the camera:
+### 3. To use the camera:
 
 python main.py -c True
 
-###4. To save the output:
+### 4. To save the output:
 
 Python main.py -c True -o ‘file_name’
 
